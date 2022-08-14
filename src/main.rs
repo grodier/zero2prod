@@ -1,6 +1,6 @@
-use zero2prod;
+use zero2prod::run;
 
 #[tokio::main]
 async fn main() -> std::io::Result<()> {
-    zero2prod::run().await
+    run()?.await
 }
