@@ -14,3 +14,5 @@ Installed sqlx cli for db: `cargo install sqlx-cli --no-default-features --featu
 Use postgres cli psql as part of init_db script: https://www.timescale.com/blog/how-to-install-psql-on-mac-ubuntu-debian-windows/
 
 Running DB: `scripts/init_db.sh` - if Docker already running `SKIP_DOCKER=true scripts/init_db.sh`
+
+Deploying to digital ocean
