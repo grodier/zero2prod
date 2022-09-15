@@ -15,4 +15,4 @@ Use postgres cli psql as part of init_db script: https://www.timescale.com/blog/
 
 Running DB: `scripts/init_db.sh` - if Docker already running `SKIP_DOCKER=true scripts/init_db.sh`
 
-Deploying to digital ocean
+Deploying to DigitalOcean
