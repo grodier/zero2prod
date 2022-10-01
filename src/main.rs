@@ -1,8 +1,5 @@
-use sqlx::postgres::PgPoolOptions;
-use std::net::TcpListener;
 use zero2prod::configuration;
-use zero2prod::email_client::EmailClient;
-use zero2prod::startup;
+use zero2prod::startup::Application;
 use zero2prod::telemetry;
 
 #[tokio::main]
@@ -11,7 +8,7 @@ async fn main() -> std::io::Result<()> {
     telemetry::init_subscriber(subscriber);
 
     let configuration = configuration::get_configuration().expect("Failed to read configuration.");
-    let server = startup::build(configuration).await?;
-    server.await?;
+    let application = Application::build(configuration).await?;
+    application.run_until_stopped().await?;
     Ok(())
 }
